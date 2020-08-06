@@ -27,29 +27,31 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
+ *    In counter1 counter is assigned, and count is not a global variable. 
  * 
  * 2. Which of the two uses a closure? How can you tell?
+ *    The first one, because it's a function within another function.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ *    For counter1, you would use it in a scenario when you want to access your parent through the child function. 
 */
 
 // counter1 code
-// function counterMaker() {
-//   let count = 0;
-//   return function counter() {
-//    return count++;
-//   }
-// }
+function counterMaker() {
+  let count = 0;
+  return function counter() {
+   return count++;
+  }
+}
 
-// const counter1 = counterMaker();
+const counter1 = counterMaker();
 
-// // counter2 code
-// let count = 0;
+// counter2 code
+let count = 0;
 
-// function counter2() {
-//   return count++;
-// }
+function counter2() {
+  return count++;
+}
 
 
 /* Task 2: inning() 
